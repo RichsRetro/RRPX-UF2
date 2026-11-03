@@ -1,0 +1,26 @@
+{
+  "edition": "Retail",
+  "source_tree": "work\\rrpx-retail0714",
+  "version": "0.7.14",
+  "temporary_session": true,
+  "automatic_session_patches": "user-selectable; ON by default",
+  "ftp": true,
+  "eeprom_backup": true,
+  "recovery": true,
+  "permanent_install": false,
+  "retail_rollback": false,
+  "game_roots": [
+    "E:\\Games",
+    "F:\\Games",
+    "G:\\Games"
+  ],
+  "pico_flash_bytes": 2097152,
+  "external_installer_assets_required": false,
+  "hardware_validated": false,
+  "early_loading_animation": true,
+  "status_panel": "right",
+  "root_menu": "scrolls above status panel",
+  "duplicate_session_menu": false,
+  "rx_packet_ownership": "copy before DMA release",
+  "upload_pipeline": true
+}

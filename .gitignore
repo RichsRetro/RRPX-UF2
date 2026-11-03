@@ -1,0 +1,10 @@
+*.obj
+*.d
+*.exe
+*.lib
+*.iso
+__pycache__/
+source/Dashboard/bin/
+source/built_boot/*.xbe
+source/build-pico/
+source/pico/assets/ENDGAME/payload.xbe

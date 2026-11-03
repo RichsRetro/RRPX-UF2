@@ -1,0 +1,1 @@
+v0.7.5: GUI-only callbacks from asynchronous XBE scans; coalesced background image/file decoding with GUI texture publication; asynchronous launch worker drain with visible progress. Keeps v0.7.4 successful visible-video HeXEn handoff and all session-only/logo/scroll/EEPROM features.

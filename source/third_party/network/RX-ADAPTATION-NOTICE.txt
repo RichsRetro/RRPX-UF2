@@ -1,0 +1,11 @@
+Network receive adaptation
+
+Original driver notices retained in the prepared SDK:
+Copyright 2001-2004 Swedish Institute of Computer Science.
+Copyright 2015 Matt Borgerson.
+Copyright 2022 Stefan Schmidt.
+Copyright 2022 Ryan Wendland.
+
+Driver SPDX designation: BSD. See LWIP-LICENSE.txt and NXDK-COPYRIGHT-NOTICES.txt.
+The new RX callback implementation is supplied in matching source as
+third_party/network/rx_copy.c.inc with its BSD-2-Clause notice.

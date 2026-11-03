@@ -1,0 +1,543 @@
+lib/hal/audio.c
+// SPDX-FileCopyrightText: 2003 Andy Green
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+// SPDX-FileCopyrightText: 2005-2006 Richard Osborne
+// SPDX-FileCopyrightText: 2006 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2020-2021 Stefan Schmidt
+
+lib/hal/audio.h
+// SPDX-FileCopyrightText: 2003 Andy Green
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2021 Bennet Blischke
+
+lib/hal/debug.c
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+// SPDX-FileCopyrightText: 2005 Robin Mulloy
+// SPDX-FileCopyrightText: 2006 Richard Osborne
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2020 Bennet Blischke
+// SPDX-FileCopyrightText: 2020 Matthew Lawson
+// SPDX-FileCopyrightText: 2021 Ryan Wendland
+
+lib/hal/debug.h
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+// SPDX-FileCopyrightText: 2005 Robin Mulloy
+// SPDX-FileCopyrightText: 2005 Tom Burns
+// SPDX-FileCopyrightText: 2006 Richard Osborne
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Jannik Vogel
+// SPDX-FileCopyrightText: 2020 Bennet Blischke
+// SPDX-FileCopyrightText: 2020 Matthew Lawson
+
+lib/hal/fileio.c
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+// SPDX-FileCopyrightText: 2006 Richard Osborne
+// SPDX-FileCopyrightText: 2017-2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2019 Jannik Vogel
+
+lib/hal/fileio.h
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+// SPDX-FileCopyrightText: 2017-2020 Stefan Schmidt
+
+lib/hal/video.c
+// SPDX-FileCopyrightText: 2005 Robin Mulloy
+// SPDX-FileCopyrightText: 2006 Tom Burns
+// SPDX-FileCopyrightText: 2006 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2006 Richard Osborne
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021 Kosmas Raptis
+// SPDX-FileCopyrightText: 2021 GXTX
+// SPDX-FileCopyrightText: 2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2022 Ryan Wendland
+
+lib/hal/video.h
+// SPDX-FileCopyrightText: 2005 Robin Mulloy
+// SPDX-FileCopyrightText: 2006 Tom Burns
+// SPDX-FileCopyrightText: 2006 Richard Osborne
+// SPDX-FileCopyrightText: 2017-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2022 Ryan Wendland
+
+lib/hal/xbox.c
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+// SPDX-FileCopyrightText: 2006 Richard Osborne
+// SPDX-FileCopyrightText: 2017-2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2022-2025 Erik Abair
+
+lib/hal/xbox.h
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+// SPDX-FileCopyrightText: 2005 Robin Mulloy
+// SPDX-FileCopyrightText: 2005 Tom Burns
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2022 Erik Abair
+
+lib/nxdk/automount_d.c
+// SPDX-FileCopyrightText: 2019-2022 Stefan Schmidt
+
+lib/nxdk/configsector.c
+// SPDX-FileCopyrightText: 2021 Luke Usher
+// SPDX-FileCopyrightText: 2022 Stefan Schmidt
+
+lib/nxdk/configsector.h
+// SPDX-FileCopyrightText: 2021 Luke Usher
+// SPDX-FileCopyrightText: 2022 Stefan Schmidt
+
+lib/nxdk/fatx.h
+// SPDX-FileCopyrightText: 2021 Stefan Schmidt
+
+lib/nxdk/format.c
+// SPDX-FileCopyrightText: 2021-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2021 GXTX
+
+lib/nxdk/format.h
+// SPDX-FileCopyrightText: 2021 Stefan Schmidt
+
+lib/nxdk/mount.c
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Kosmas Raptis
+
+lib/nxdk/mount.h
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+
+lib/nxdk/net.c
+// SPDX-FileCopyrightText: 2022 Stefan Schmidt
+
+lib/nxdk/path.c
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/nxdk/path.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Lucas Jansson
+
+lib/nxdk/xbe.c
+// SPDX-FileCopyrightText: 2022 Stefan Schmidt
+
+lib/nxdk/xbe.h
+// SPDX-FileCopyrightText: 2022 Stefan Schmidt
+
+lib/pbkit/pbkit.c
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021 Erik Abair
+
+lib/pbkit/pbkit.h
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021 Erik Abair
+
+lib/pbkit/pbkit_dma.c
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/pbkit/pbkit_dma.h
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/pbkit/pbkit_draw.c
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/pbkit/pbkit_draw.h
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/pbkit/pbkit_framebuffer.h
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/pbkit/pbkit_gamma.c
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2025 Stefan Schmidt
+
+lib/pbkit/pbkit_gamma.h
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2025 Stefan Schmidt
+
+lib/pbkit/pbkit_print.c
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/pbkit/pbkit_print.h
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/pbkit/pbkit_pushbuffer.c
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/pbkit/pbkit_pushbuffer.h
+// SPDX-FileCopyrightText: 2007 Guillaume Lamonoca
+// SPDX-FileCopyrightText: 2017 espes
+// SPDX-FileCopyrightText: 2017-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2018-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019 Lucas Jansson
+// SPDX-FileCopyrightText: 2021-2025 Erik Abair
+
+lib/winapi/badptr.c
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/basetsd.h
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/debug.c
+// SPDX-FileCopyrightText: 2019 Jannik Vogel
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/debugapi.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/errhandlingapi.c
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/errhandlingapi.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/error.c
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/fiber.c
+// SPDX-FileCopyrightText: 2019-2022 Stefan Schmidt
+
+lib/winapi/fibersapi.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/fibersapi_internal_.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/fileapi.h
+// SPDX-FileCopyrightText: 2019-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2021 Erik Abair
+
+lib/winapi/fileio.c
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+
+lib/winapi/filemanip.c
+// SPDX-FileCopyrightText: 2019-2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2021 Erik Abair
+
+lib/winapi/findfile.c
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+
+lib/winapi/handleapi.c
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/handleapi.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/ioapi.c
+// SPDX-FileCopyrightText: 2023 Ryan Wendland
+
+lib/winapi/libloaderapi.c
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2021 Stefan Schmidt
+
+lib/winapi/libloaderapi.h
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/memory.c
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+
+lib/winapi/memoryapi.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/minwinbase.h
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Samuel Cuella
+
+lib/winapi/process.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/processthreadsapi.h
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+
+lib/winapi/profileapi.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/profiling.c
+// SPDX-FileCopyrightText: 2019-2025 Stefan Schmidt
+
+lib/winapi/shlobj.h
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/shlobj_core.c
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/shlobj_core.h
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/sync.c
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2022 Ryan Wendland
+
+lib/winapi/synchapi.h
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2022 Ryan Wendland
+
+lib/winapi/sysinfo.c
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Samuel Cuella
+// SPDX-FileCopyrightText: 2023 Ryan Wendland
+
+lib/winapi/sysinfoapi.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Samuel Cuella
+
+lib/winapi/thread.c
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+
+lib/winapi/timezoneapi.c
+// SPDX-FileCopyrightText: 2023 Ryan Wendland
+// SPDX-FileCopyrightText: 2025 Stefan Schmidt
+
+lib/winapi/timezoneapi.h
+// SPDX-FileCopyrightText: 2023 Ryan Wendland
+// SPDX-FileCopyrightText: 2025 Stefan Schmidt
+
+lib/winapi/tls.c
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/winapifamily.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/winapi/winbase.h
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019-2020 Jannik Vogel
+
+lib/winapi/windef.h
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019-2020 Jannik Vogel
+
+lib/winapi/windows.h
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/winerror.h
+// SPDX-FileCopyrightText: 2004 Craig Edwards
+
+lib/winapi/winnt.c
+// SPDX-FileCopyrightText: 2021 Stefan Schmidt
+
+lib/winapi/winnt.h
+// SPDX-FileCopyrightText: 2019 Jannik Vogel
+// SPDX-FileCopyrightText: 2019-2024 Stefan Schmidt
+// SPDX-FileCopyrightText: 2021 Lucas Jansson
+
+lib/xboxkrnl/ntstatus.h
+// SPDX-FileCopyrightText: 2020-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2021 RadWolfie
+// SPDX-FileCopyrightText: 2022 Ryan Wendland
+
+lib/xboxkrnl/xboxdef.h
+// SPDX-FileCopyrightText: 2019-2024 Stefan Schmidt
+// SPDX-FileCopyrightText: 2019-2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2019 Matt Borgerson
+// SPDX-FileCopyrightText: 2022 RadWolfie
+
+lib/xboxkrnl/xboxkrnl.h
+// SPDX-FileCopyrightText: 2017-2026 Stefan Schmidt
+// SPDX-FileCopyrightText: 2018-2021 Jannik Vogel
+// SPDX-FileCopyrightText: 2018 Sean Koppenhafer
+// SPDX-FileCopyrightText: 2022-2025 Erik Abair
+
+lib/net/nvnetdrv/nvnetdrv.c
+// SPDX-FileCopyrightText: 2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2022 Ryan Wendland
+
+lib/net/nvnetdrv/nvnetdrv.h
+// SPDX-FileCopyrightText: 2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2022 Ryan Wendland
+
+lib/net/nvnetdrv/nvnetdrv_lwip.c
+// SPDX-FileCopyrightText: 2001-2004 Swedish Institute of Computer Science.
+// SPDX-FileCopyrightText: 2015 Matt Borgerson
+// SPDX-FileCopyrightText: 2022 Stefan Schmidt
+// SPDX-FileCopyrightText: 2022 Ryan Wendland
+
+lib/winapi/winmm/mmsystem.h
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/winmm/timeapi.c
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/winapi/winmm/timeapi.h
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+// SPDX-FileCopyrightText: 2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/check_stack.c
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/xboxrt/c_runtime/chkstk.s
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_alldiv.s
+// SPDX-FileCopyrightText: 2008 Stephen Canon
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_allmul.s
+// SPDX-FileCopyrightText: 2008 Stephen Canon
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_allrem.s
+// SPDX-FileCopyrightText: 2008 Stephen Canon
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_allshl.s
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_allshr.s
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_aulldiv.s
+// SPDX-FileCopyrightText: 2008 Stephen Canon
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_aullrem.s
+// SPDX-FileCopyrightText: 2008 Stephen Canon
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_aullshl.s
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_aullshr.s
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/c_runtime/_fltused.c
+// SPDX-FileCopyrightText: 2018-2021 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/crtdbg.h
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/xboxrt/libc_extensions/ctype_ext_.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/direct.c
+// SPDX-FileCopyrightText: 2023 ExoSkye
+// SPDX-FileCopyrightText: 2025 Ryan Wendland
+
+lib/xboxrt/libc_extensions/direct.h
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/xboxrt/libc_extensions/errno_ext_.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/locale_ext_.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/malloc.h
+// SPDX-FileCopyrightText: 2020 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/stdio_ext_.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/stdlib_ext_.c
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/stdlib_ext_.h
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+// SPDX-FileCopyrightText: 2020 Jannik Vogel
+
+lib/xboxrt/libc_extensions/strings.c
+// SPDX-FileCopyrightText: 2015 espes
+
+lib/xboxrt/libc_extensions/strings.h
+// SPDX-FileCopyrightText: 2015 espes
+
+lib/xboxrt/libc_extensions/string_ext_.c
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/string_ext_.h
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/tchar.h
+// SPDX-FileCopyrightText: 2020 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/unistd.h
+// SPDX-FileCopyrightText: 2017 Matt Borgerson
+
+lib/xboxrt/libc_extensions/wchar.c
+// SPDX-FileCopyrightText: 2019 Sean Koppenhafer
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/wchar.h
+// SPDX-FileCopyrightText: 2019 Sean Koppenhafer
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/wchar_ext_.c
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/wchar_ext_.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/libc_extensions/wctype_ext_.c
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/vcruntime/eh.h
+// SPDX-FileCopyrightText: 2020 Stefan Schmidt
+
+lib/xboxrt/vcruntime/excpt.h
+// SPDX-FileCopyrightText: 2020 Stefan Schmidt
+// SPDX-FileCopyrightText: 2022 RadWolfie
+
+lib/xboxrt/vcruntime/purecall.c
+// SPDX-FileCopyrightText: 2019-2021 Stefan Schmidt
+
+lib/xboxrt/vcruntime/stack_protection.c
+// SPDX-FileCopyrightText: 2021 Stefan Schmidt
+
+lib/xboxrt/vcruntime/threadsafe_statics.c
+// SPDX-FileCopyrightText: 2019 Timo Kreuzer
+// SPDX-FileCopyrightText: 2020 Stefan Schmidt
+
+lib/xboxrt/vcruntime/vcruntime_exception.h
+// SPDX-FileCopyrightText: 2019 Stefan Schmidt
+
+lib/xboxrt/vcruntime/vcruntime_typeinfo.h
+// SPDX-FileCopyrightText: 2019-2020 Stefan Schmidt

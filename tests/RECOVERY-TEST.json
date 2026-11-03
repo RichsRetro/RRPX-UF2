@@ -1,0 +1,14 @@
+{
+  "read_only": true,
+  "user_confirmed_recovery_entry": true,
+  "tests": [
+    "Recovery login, passive directory listing and staged dashboard discovery",
+    "Recovery dashboard readback matches v0.7.14 exactly",
+    "Recovery disconnect, reconnect and NOOP; clients disconnected after test"
+  ],
+  "greeting": "220 PicoLaunch FTP ready",
+  "dashboard_bytes": 2994176,
+  "dashboard_sha256": "ecc93412fb185bb62455effd0c16c50b9e139b1c3bb759a50cdba4a030940a3e",
+  "passed": true,
+  "normal_relaunch_user_confirmed": true
+}

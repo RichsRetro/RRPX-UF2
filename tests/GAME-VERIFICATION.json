@@ -1,0 +1,16 @@
+{
+  "read_only": true,
+  "remote": "/E/Games",
+  "files": 2400,
+  "bytes": 3466109578,
+  "mismatches": [],
+  "missing": [],
+  "extra": [],
+  "complete": true,
+  "games": [
+    "Grand Theft Auto III.xiso",
+    "The Simpsons - Hit & Run.xiso"
+  ],
+  "elapsed_seconds": 1308.88,
+  "passed": true
+}

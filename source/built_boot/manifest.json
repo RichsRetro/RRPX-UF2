@@ -1,0 +1,105 @@
+{
+  "component_license": "GPL-2.0-only",
+  "source_commit": "53203aa1c1272468c9374f260233f92557c9f324",
+  "upstream": "https://github.com/Rocky5/Xbox-Softmodding-Tool",
+  "profiles": {
+    "K.1.0.3944.1": {
+      "kernel": "1.0.3944.1",
+      "font_gadget": 2147707828,
+      "upstream_font_sha256": "b42ecee65b4f83501e452ac7d6857ee5e78b1896351b75176690a2036a31b856",
+      "patcher_supported": true
+    },
+    "K.1.0.4034.1": {
+      "kernel": "1.0.4034.1",
+      "font_gadget": 2147708020,
+      "upstream_font_sha256": "781dedfa6b3ff2465026c8284f06b1fb4e3651842d66011e92804a70abb227b0",
+      "patcher_supported": true
+    },
+    "K.1.0.4627.1": {
+      "kernel": "1.0.4627.1",
+      "font_gadget": 2147704404,
+      "upstream_font_sha256": "8e0431604e8cbf11de85ecc8a354748fbe7703c960ac7dce137fd3834a8e0785",
+      "patcher_supported": false
+    },
+    "K.1.0.4817.1": {
+      "kernel": "1.0.4817.1",
+      "font_gadget": 2147704436,
+      "upstream_font_sha256": "b69af99929830b3554136d5b2121ecff156395f2950fd20730c4c899be4c9936",
+      "patcher_supported": true
+    },
+    "K.1.0.5101.1": {
+      "kernel": "1.0.5101.1",
+      "font_gadget": 2147704692,
+      "upstream_font_sha256": "3d3dedc414c6a320f23440c8695bd80e72c5554d0261e0fe76ea56beaa3171ce",
+      "patcher_supported": true
+    },
+    "K.1.0.5530.1": {
+      "kernel": "1.0.5530.1",
+      "font_gadget": 2147709668,
+      "upstream_font_sha256": "a90219d4c48987a0eed0a7fef6fe2238c4b73aacd7b758bc4909b266123aeb2a",
+      "patcher_supported": true
+    },
+    "K.1.0.5713.1": {
+      "kernel": "1.0.5713.1",
+      "font_gadget": 2147709700,
+      "upstream_font_sha256": "1971cc98fc6373c7e94ca7f57de180fb941263ff67de950c6b83eab830c215af",
+      "patcher_supported": true
+    },
+    "K.1.0.5838.1": {
+      "kernel": "1.0.5838.1",
+      "font_gadget": 2147709700,
+      "upstream_font_sha256": "1971cc98fc6373c7e94ca7f57de180fb941263ff67de950c6b83eab830c215af",
+      "patcher_supported": true
+    }
+  },
+  "files": {
+    "ernie.xtf": {
+      "bytes": 451,
+      "sha256": "36c7e9db37e6f1cb90bb2b2b11f22a181e7d8cc88528b835bae5be85cdab07ac"
+    },
+    "K.1.0.3944.1": {
+      "bytes": 72,
+      "sha256": "b42ecee65b4f83501e452ac7d6857ee5e78b1896351b75176690a2036a31b856"
+    },
+    "K.1.0.4034.1": {
+      "bytes": 72,
+      "sha256": "781dedfa6b3ff2465026c8284f06b1fb4e3651842d66011e92804a70abb227b0"
+    },
+    "K.1.0.4627.1": {
+      "bytes": 72,
+      "sha256": "8e0431604e8cbf11de85ecc8a354748fbe7703c960ac7dce137fd3834a8e0785"
+    },
+    "K.1.0.4817.1": {
+      "bytes": 72,
+      "sha256": "b69af99929830b3554136d5b2121ecff156395f2950fd20730c4c899be4c9936"
+    },
+    "K.1.0.5101.1": {
+      "bytes": 72,
+      "sha256": "3d3dedc414c6a320f23440c8695bd80e72c5554d0261e0fe76ea56beaa3171ce"
+    },
+    "K.1.0.5530.1": {
+      "bytes": 72,
+      "sha256": "a90219d4c48987a0eed0a7fef6fe2238c4b73aacd7b758bc4909b266123aeb2a"
+    },
+    "K.1.0.5713.1": {
+      "bytes": 72,
+      "sha256": "1971cc98fc6373c7e94ca7f57de180fb941263ff67de950c6b83eab830c215af"
+    },
+    "K.1.0.5838.1": {
+      "bytes": 72,
+      "sha256": "1971cc98fc6373c7e94ca7f57de180fb941263ff67de950c6b83eab830c215af"
+    },
+    "nkpatcher-unsigned.xbe": {
+      "bytes": 14904,
+      "sha256": "0a8b81cf7e78dc4a48b0fb1151e8c9de3c2d50a4db12a546af4e9eaf3a0f3060"
+    },
+    "nkpatcher.xbe": {
+      "bytes": 14904,
+      "sha256": "35207424f3baaef800b4a70685ae7501ae78a117aa6a9d762fad251b7ae1c848"
+    }
+  },
+  "required_microsoft_loader_sha256": "3ae2f3eae3917e0130d1e1a5c8e1c5df207ea31703646a174d98f7be9a769495",
+  "microsoft_loader_included": false,
+  "persistent_activation_enabled": false,
+  "reason": "Cold-boot profile and recovery procedure not yet hardware-validated; ShadowC disabled in the staging configuration."
+}

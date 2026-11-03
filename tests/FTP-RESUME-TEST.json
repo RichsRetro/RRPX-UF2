@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "staged dashboard matches v0.7.14",
+      "passed": true,
+      "sha256": "ecc93412fb185bb62455effd0c16c50b9e139b1c3bb759a50cdba4a030940a3e"
+    },
+    {
+      "name": "clean_disconnect reconnect REST resume and full SHA256",
+      "passed": true,
+      "resume_offset": 3145851,
+      "bytes": 8388443,
+      "sha256": "dab47f71b5677d5fe42c77363fac7f2d6485cd909119c18a86f79f785087c1eb",
+      "resume_seconds": 4.437
+    },
+    {
+      "name": "reset_disconnect reconnect REST resume and full SHA256",
+      "passed": true,
+      "resume_offset": 1048576,
+      "bytes": 8388443,
+      "sha256": "dab47f71b5677d5fe42c77363fac7f2d6485cd909119c18a86f79f785087c1eb",
+      "resume_seconds": 3.047
+    },
+    {
+      "name": "overwrite truncation and handle release",
+      "passed": true
+    }
+  ],
+  "cleanup_complete": true
+}

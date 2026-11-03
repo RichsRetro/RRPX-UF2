@@ -1,0 +1,42 @@
+{
+  "K.1.0.3944.1": {
+    "kernel": "1.0.3944.1",
+    "font_gadget": 2147707828,
+    "upstream_font_sha256": "b42ecee65b4f83501e452ac7d6857ee5e78b1896351b75176690a2036a31b856"
+  },
+  "K.1.0.4034.1": {
+    "kernel": "1.0.4034.1",
+    "font_gadget": 2147708020,
+    "upstream_font_sha256": "781dedfa6b3ff2465026c8284f06b1fb4e3651842d66011e92804a70abb227b0"
+  },
+  "K.1.0.4627.1": {
+    "kernel": "1.0.4627.1",
+    "font_gadget": 2147704404,
+    "upstream_font_sha256": "8e0431604e8cbf11de85ecc8a354748fbe7703c960ac7dce137fd3834a8e0785"
+  },
+  "K.1.0.4817.1": {
+    "kernel": "1.0.4817.1",
+    "font_gadget": 2147704436,
+    "upstream_font_sha256": "b69af99929830b3554136d5b2121ecff156395f2950fd20730c4c899be4c9936"
+  },
+  "K.1.0.5101.1": {
+    "kernel": "1.0.5101.1",
+    "font_gadget": 2147704692,
+    "upstream_font_sha256": "3d3dedc414c6a320f23440c8695bd80e72c5554d0261e0fe76ea56beaa3171ce"
+  },
+  "K.1.0.5530.1": {
+    "kernel": "1.0.5530.1",
+    "font_gadget": 2147709668,
+    "upstream_font_sha256": "a90219d4c48987a0eed0a7fef6fe2238c4b73aacd7b758bc4909b266123aeb2a"
+  },
+  "K.1.0.5713.1": {
+    "kernel": "1.0.5713.1",
+    "font_gadget": 2147709700,
+    "upstream_font_sha256": "1971cc98fc6373c7e94ca7f57de180fb941263ff67de950c6b83eab830c215af"
+  },
+  "K.1.0.5838.1": {
+    "kernel": "1.0.5838.1",
+    "font_gadget": 2147709700,
+    "upstream_font_sha256": "1971cc98fc6373c7e94ca7f57de180fb941263ff67de950c6b83eab830c215af"
+  }
+}
