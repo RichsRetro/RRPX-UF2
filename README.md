@@ -6,7 +6,7 @@ A reusable original Xbox service toolkit on a standard **2 MB Raspberry Pi Pico*
 
 ## Download
 
-Get **RRPX-UF2-Retail-v0.7.14.uf2** from [Releases](https://github.com/RichsRetro/RRPX-UF2/releases/latest). The UF2 container is about 3 MB because of its block overhead; the firmware written to flash is **1,538,076 bytes**, within the Pico's 2 MB capacity.
+Get **RRPX-UF2-Retail-v0.7.15.uf2** from [Releases](https://github.com/RichsRetro/RRPX-UF2/releases/latest). The UF2 container is about 3 MB because of its block overhead; the firmware written to flash is **1,507,420 bytes**, within the Pico's 2 MB capacity.
 
 ## Start
 

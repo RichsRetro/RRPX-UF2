@@ -288,7 +288,48 @@ std::string dvdGameFolderName() {
 
 }
 
-bool measureTree(const std::string& source, unsigned long long& totalBytes, const std::atomic<bool>* stop = nullptr, const GamePatchPlan* plan = nullptr, std::string* problem = nullptr) {
+struct CopySize {
+  unsigned long long dataBytes = 0;
+  unsigned long long diskBytes = 0;
+  unsigned long long clusterBytes = 0;
+  unsigned long long freeBytes = 0;
+
+  bool readVolume(const std::string& folder) {
+    DWORD sectors = 0, sectorBytes = 0, freeClusters = 0;
+    if (!GetDiskFreeSpaceA(folder.substr(0, 3).c_str(), &sectors, &sectorBytes, &freeClusters, nullptr))
+      return false;
+    clusterBytes = static_cast<unsigned long long>(sectors) * sectorBytes;
+    freeBytes = clusterBytes * freeClusters;
+    // Reserve space for the Games directory and growth of its parent directory.
+    diskBytes = 2 * clusterBytes;
+    return clusterBytes != 0;
+  }
+
+  void addAllocation(unsigned long long bytes) {
+    diskBytes += ((bytes + clusterBytes - 1) / clusterBytes) * clusterBytes;
+  }
+};
+
+std::string gibibytesLabel(unsigned long long bytes) {
+  constexpr unsigned long long bytesPerGiB = 1024ULL * 1024 * 1024;
+  const auto hundredths = (bytes / bytesPerGiB) * 100 +
+      ((bytes % bytesPerGiB) * 100 + bytesPerGiB / 2) / bytesPerGiB;
+  char text[32] = {};
+  snprintf(text, sizeof(text), "%llu.%02u", hundredths / 100,
+      static_cast<unsigned>(hundredths % 100));
+  return text;
+}
+
+std::string copySpaceMessage(const std::string& folder, const CopySize& size) {
+  char text[192] = {};
+  snprintf(text, sizeof(text), i18n::c("%s on %s. Required: %s GiB (%llu bytes). Free: %s GiB (%llu bytes)."),
+      size.freeBytes >= size.diskBytes ? i18n::c("Enough space") : i18n::c("Not enough free space"),
+      folder.substr(0, 2).c_str(), gibibytesLabel(size.diskBytes).c_str(), size.diskBytes,
+      gibibytesLabel(size.freeBytes).c_str(), size.freeBytes);
+  return text;
+}
+
+bool measureTree(const std::string& source, CopySize& size, const std::atomic<bool>* stop, const GamePatchPlan* plan, std::string* problem) {
 
   if (stop && stop->load()) return false;
 
@@ -301,6 +342,7 @@ bool measureTree(const std::string& source, unsigned long long& totalBytes, cons
   bool succeeded = true;
 
   std::set<std::string> names;
+  unsigned long long entries = 2;
 
   do {
 
@@ -311,6 +353,7 @@ bool measureTree(const std::string& source, unsigned long long& totalBytes, cons
     std::string child = source + entry.cFileName;
 
     if (plan && !(entry.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) && plan->skipFile(child.substr(3))) continue;
+    ++entries;
 
     if (plan) {
 
@@ -342,13 +385,15 @@ bool measureTree(const std::string& source, unsigned long long& totalBytes, cons
 
       child += "\\";
 
-      if (!measureTree(child, totalBytes, stop, plan, problem)) succeeded = false;
+      if (!measureTree(child, size, stop, plan, problem)) succeeded = false;
 
     } else {
 
-      totalBytes += (static_cast<unsigned long long>(entry.nFileSizeHigh) << 32) |
+      const auto bytes = (static_cast<unsigned long long>(entry.nFileSizeHigh) << 32) |
 
                     entry.nFileSizeLow;
+      size.dataBytes += bytes;
+      size.addAllocation(bytes);
 
     }
 
@@ -357,6 +402,7 @@ bool measureTree(const std::string& source, unsigned long long& totalBytes, cons
   if (GetLastError() != ERROR_NO_MORE_FILES) succeeded = false;
 
   FindClose(search);
+  size.addAllocation(entries * 64);
 
   return succeeded;
 
@@ -600,9 +646,7 @@ static DWORD WINAPI checkCopySpace(LPVOID argument) {
 
   DiscAccess access;
 
-  unsigned long long bytes = 0;
-
-  ULARGE_INTEGER free = {};
+  CopySize size;
 
   const bool disc = !state.stop && GetFileAttributesA("D:\\default.xbe") != INVALID_FILE_ATTRIBUTES;
 
@@ -612,29 +656,15 @@ static DWORD WINAPI checkCopySpace(LPVOID argument) {
 
   const bool prepared = disc && plan.prepare("D:\\", problem);
 
-  const bool measured = prepared && measureTree("D:\\", bytes, &state.stop, &plan, &problem);
-
-  const bool space = GetDiskFreeSpaceExA(state.target.substr(0, 3).c_str(), nullptr, nullptr, &free) != 0;
-
-  char totals[160] = {};
-
-  if (measured && space) {
-
-    snprintf(totals, sizeof(totals), i18n::c("Game size: %.2f GB | Free space: %.2f GB | %s"),
-
-        static_cast<double>(bytes) / 1000000000.0, static_cast<double>(free.QuadPart) / 1000000000.0,
-
-        free.QuadPart >= bytes ? i18n::c("Enough space to copy.") : i18n::c("Not enough space."));
-
-  }
+  const bool space = size.readVolume(state.target);
+  const bool measured = prepared && space && measureTree("D:\\", size, &state.stop, &plan, &problem);
 
   std::lock_guard<std::mutex> lock(state.mutex);
-
-  state.text = !problem.empty() ? problem : measured && space ? totals : !disc ? i18n::c("Insert an Xbox game disc, then reopen this page.") :
-
-      i18n::c("Could not check game size or free space. Reopen this page to retry.");
-
-  state.allowed = measured && space && free.QuadPart >= bytes && !state.stop;
+  state.text = !problem.empty() ? problem : measured ? copySpaceMessage(state.target, size) :
+      !disc ? i18n::c("Insert an Xbox game disc, then reopen this page.") :
+      !space ? i18n::c("Could not check free space on the selected drive.") :
+      i18n::c("Could not check the game size. Reopen this page to retry.");
+  state.allowed = measured && size.freeBytes >= size.diskBytes && !state.stop;
 
   state.ready = true;
 
@@ -752,9 +782,7 @@ public:
 
     DiscAccess discAccess;
 
-    ULARGE_INTEGER freeBytes = {};
-
-    unsigned long long requiredBytes = 0;
+    CopySize size;
 
     CopySummary summary;
 
@@ -766,17 +794,15 @@ public:
 
     const bool patchReady = gameDiscPresent && plan.prepare("D:\\", summary.error);
 
-    const bool discReadable = patchReady && measureTree("D:\\", requiredBytes, nullptr, &plan, &summary.error);
-
-    summary.totalBytes = requiredBytes;
-
-    bool spaceKnown = GetDiskFreeSpaceExA(gamesFolder.substr(0, 3).c_str(), nullptr,
-
-                                          nullptr, &freeBytes) != 0;
+    const bool volumeKnown = size.readVolume(gamesFolder);
+    const bool discReadable = patchReady && volumeKnown && measureTree("D:\\", size, nullptr, &plan, &summary.error);
+    ULARGE_INTEGER freeNow = {};
+    const bool spaceKnown = volumeKnown && (!discReadable ||
+        GetDiskFreeSpaceExA(gamesFolder.substr(0, 3).c_str(), &freeNow, nullptr, nullptr) != 0);
+    if (discReadable) size.freeBytes = freeNow.QuadPart;
+    summary.totalBytes = size.dataBytes;
 
     const std::string destination = gamesFolder + "\\" + dvdGameFolderName();
-
-    const std::string driveGamesFolder = gamesFolder + "\\";
 
     std::string message;
 
@@ -784,25 +810,22 @@ public:
 
       message = i18n::c("No launchable Xbox game disc detected in the DVD drive.");
 
-    } else if (!discReadable) {
-
-      message = summary.error.empty() ? i18n::c("Game disc detected, but its files could not be listed. Copy not started.") : summary.error;
-
     } else if (!spaceKnown) {
-
       message = i18n::c("Could not check free space on the selected drive. Copy cancelled.");
 
-    } else if (freeBytes.QuadPart < requiredBytes) {
+    } else if (!discReadable) {
+      message = summary.error.empty() ? i18n::c("Game disc detected, but its files could not be listed. Copy not started.") : summary.error;
 
-      message = i18n::c("Not enough free space. Copy cancelled.");
+    } else if (size.freeBytes < size.diskBytes) {
+      message = copySpaceMessage(gamesFolder, size);
 
     } else if (!allocateCopyBuffer(summary)) {
 
       message = i18n::c("Not enough memory for the DVD copy buffer. Copy cancelled.");
 
-    } else if ((GetFileAttributesA(driveGamesFolder.c_str()) == INVALID_FILE_ATTRIBUTES &&
+    } else if ((GetFileAttributesA(gamesFolder.c_str()) == INVALID_FILE_ATTRIBUTES &&
 
-                !CreateDirectoryA(driveGamesFolder.c_str(), nullptr)) ||
+                !CreateDirectoryA(gamesFolder.c_str(), nullptr)) ||
 
                GetFileAttributesA(destination.c_str()) != INVALID_FILE_ATTRIBUTES ||
 
@@ -848,15 +871,15 @@ public:
 
       message += std::to_string(summary.files) + i18n::c(" files, ") +
 
-                 std::to_string(summary.bytes / (1024 * 1024)) + i18n::c(" MB copied");
+                 std::to_string(summary.bytes / (1024 * 1024)) + i18n::c(" MiB copied");
 
       if (summary.failed) message += ", " + std::to_string(summary.failed) + i18n::c(" failed");
 
       char dataTotal[100] = {};
 
-      snprintf(dataTotal, sizeof(dataTotal), i18n::c(" | Total data copied: %.2f GB (%llu bytes)"),
+      snprintf(dataTotal, sizeof(dataTotal), i18n::c(" | Total data copied: %s GiB (%llu bytes)"),
 
-               static_cast<double>(summary.bytes) / 1000000000.0, summary.bytes);
+               gibibytesLabel(summary.bytes).c_str(), summary.bytes);
 
       message += dataTotal;
 
@@ -910,7 +933,9 @@ public:
 
       addNode(std::make_shared<CopySpaceLabel>(this, state));
 
-      addNode(std::make_shared<CopyAction>(this, i18n::c("Start DVD copy"), target, state));
+      const bool createGames = GetFileAttributesA(target.c_str()) == INVALID_FILE_ATTRIBUTES;
+      addNode(std::make_shared<CopyAction>(this,
+          createGames ? i18n::c("Create Games folder and copy") : i18n::c("Start DVD copy"), target, state));
 
       addNode(std::make_shared<MenuNonInteractive>(this, i18n::c("Creates a game folder in Games. Nothing overwritten.")));
 
@@ -998,6 +1023,13 @@ void DvdCopyMenu::loadTargets() {
 
                                          gamesFolder));
 
+  }
+
+  if (GetFileAttributesA("E:\\") != INVALID_FILE_ATTRIBUTES) {
+    const bool onlyE = getChildNodes()->empty();
+    addNode(std::make_shared<CopyTarget>(this, i18n::c("Copy to E:\\Games"), "E:\\Games"));
+    if (onlyE)
+      addNode(std::make_shared<MenuNonInteractive>(this, i18n::c("No F: or G: drive found.")));
   }
 
   if (getChildNodes()->empty()) {

@@ -1,4 +1,4 @@
-# Building Retail v0.7.14
+# Building Retail v0.7.15
 
 The source directory is the matching dashboard/Pico/component source for the tested UF2. Use Linux/WSL for nxdk. Dependencies are build-time only: users of the released UF2 do not need downloads or extra installer assets.
 
@@ -17,7 +17,7 @@ python3 tools/sign_dashboard.py
 export PICO_SDK_PATH=/absolute/path/to/pico-sdk
 cmake -S pico -B build-pico -G Ninja -DPICO_BOARD=pico -DPICO_NO_PICOTOOL=1
 cmake --build build-pico -j4
-python3 pico/tools/make_uf2.py build-pico/pico_endgame.bin RRPX-UF2-Retail-v0.7.14.uf2
+python3 pico/tools/make_uf2.py build-pico/pico_endgame.bin RRPX-UF2-Retail-v0.7.15.uf2
 ```
 
 Use a clean native build when switching SDK or source trees. Never reuse foreign `.obj` or absolute `.d` files. The prepared network SDK has owned-copy receive buffers and compiled capacity/mode guards required by the dashboard.

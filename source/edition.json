@@ -1,7 +1,7 @@
 {
   "edition": "Retail",
-  "source_tree": "work\\rrpx-retail0714",
-  "version": "0.7.14",
+  "source_tree": "source",
+  "version": "0.7.15",
   "temporary_session": true,
   "automatic_session_patches": "user-selectable; ON by default",
   "ftp": true,
